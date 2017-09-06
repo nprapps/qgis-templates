@@ -14,7 +14,7 @@ The following things are assumed to be true in this documentation.
 
 The project contains the following folders and important files:
 
-- `us-base-template` -- A template for U.S. maps.
+- `us-base-template` -- A template for maps within the U.S.
 
 
 ## Using the U.S. map template
