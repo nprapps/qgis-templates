@@ -8,7 +8,7 @@ A home for NPR Viz-style QGIS map templates, which include style configurations 
 
 The following things are assumed to be true in this documentation.
 
-- You have QGIS 2.14.1 installed and working.
+- You have QGIS 2.14 installed and working.
 
 ## What's in here?
 
@@ -23,7 +23,7 @@ This template focuses on the U.S., but the styles can be applied to other geogra
 
 ### What's in this template?
 
-The template folder includes a XXXXXXX file for setup, which will download the base shapefiles from [Natural Earth](http://www.naturalearthdata.com/downloads/) and locate them in a way QGIS can find them. The base shapefiles are:
+The template folder includes a `download.sh` file for setup, which will download the base shapefiles from [Natural Earth](http://www.naturalearthdata.com/downloads/) and group them in a directory called `us-base-src`. The base shapefiles are:
 
 - `ne_10m_populated_places` -- Populated places (major cities), with scalerank
 - `ne_10m_lakes` -- Lakes
@@ -36,7 +36,10 @@ The template itself is configured to look as close as possible to an NPR Viz map
 
 ### Installing the template
 
-1. Run XXXXX script to download base shapefiles from Natural earth.
+1. Run the `download.sh` script to download base shapefiles from Natural Earth:
+		
+		bash us-base-template/download.sh
+		
 2. Copy the contents of the directory into your QGIS template folder:
 	
 		cp -r us-base-template/* ~/.qgis2/project_templates
@@ -47,3 +50,11 @@ The template itself is configured to look as close as possible to an NPR Viz map
 ### Using the template
 
 Open up QGIS and select `Project > New from template > us-base.qgs`. Map, map away!
+
+### Exporting a map 
+
+TKTK
+
+### Finishing touches
+
+TKTK
