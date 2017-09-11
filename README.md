@@ -53,7 +53,18 @@ Open up QGIS and select `Project > New from template > us-base.qgs`. Map, map aw
 
 ### Exporting a map 
 
-TKTK
+The template has two export options, called Print Composers, that will export your maps at the correct size and scale for a typical story page. 
+
+1. Access the print composers through `Project > Print Composers` and select either the 600px size or the 300px size.
+2.  Use the `Items` panel to select your map.
+	
+	*Note: If you see an empty canvas with the words "Map will be printed here," select your map and open the `Item properties` panel. Under `Main properties`, change the dropdown from "Rectangle" to "Cache" or "Render".*
+	
+3. Scale and position your map how you'd like it to display. My preferred method of doing this is by positioning the map within the main QGIS viewer, then selecting `Item properties > Extents > Set to map canvas extent`.
+4. Update your scale bar to be about 25-33% of the width of the canvas, and change the labeling accordingly. This is done by selecting `<scale bar>` under the `Items` panel, then updating `Item properties > Segments > Fixed width` to your preferred length.
+5. When you're happy with your map, export it by going to `Composer > Export as SVG`. You'll receive a warning message about SVG rendering; just close and continue.
+6. In the `SVG export options` that appears, uncheck the `Render map labels as outlines` option. This will allow your labels to render in editable text.
+7. Hit save, and you're done!
 
 ### Finishing touches
 
