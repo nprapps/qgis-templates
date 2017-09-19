@@ -47,7 +47,14 @@ $(UNZIPPED_DIRS): %: %.zip
 $(ZIP_FILES): %.zip: %.zip.conf
 	curl -L --config $< --output $@
 
-$(CURL_CONF_FILES): $(SRC_DIR)
+# Create a curl configuration file for each of our source URLs.
+# These will be created in our source directory and we add it as a
+# prerequisite to ensure it exists before we write files into it.
+# The `|` markes it as an order-only prerequisite which is required because
+# make rebuilds based on timestamps and the timestamp of a directory changes
+# whenever any of its contents change.
+# See https://www.gnu.org/software/make/manual/html_node/Prerequisite-Types.html
+$(CURL_CONF_FILES): | $(SRC_DIR)
 	for url in $(URL_LIST); do \
 		zip_filename=$$(echo $$url | rev | cut -d / -f 1 | rev); \
 		url_filename="$(SRC_DIR)/$$zip_filename.conf"; \
