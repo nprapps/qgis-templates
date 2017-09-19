@@ -34,9 +34,14 @@ CURL_CONF_FILES := $(addsuffix .conf,$(ZIP_FILES))
 # extension.
 UNZIPPED_DIRS := $(basename $(ZIP_FILES))
 
+# Use the bash shell as it makes some of our recipes much simpler.
+# In particular, being able to index arrays lets us do all our filename
+# and path manipulation when assigning make variables above rather than
+# replicating this work in bash.
+SHELL := /bin/bash
+
 .PHONY: all clean
 
-# TODO Make sure all .zip.conf files are deleted
 .INTERMEDIATE: $(CURL_CONF_FILES) $(ZIP_FILES)
 
 all: $(UNZIPPED_DIRS)
@@ -48,17 +53,47 @@ $(ZIP_FILES): %.zip: %.zip.conf
 	curl -L --config $< --output $@
 
 # Create a curl configuration file for each of our source URLs.
+#
 # These will be created in our source directory and we add it as a
 # prerequisite to ensure it exists before we write files into it.
 # The `|` markes it as an order-only prerequisite which is required because
 # make rebuilds based on timestamps and the timestamp of a directory changes
 # whenever any of its contents change.
 # See https://www.gnu.org/software/make/manual/html_node/Prerequisite-Types.html
+#
+# This is the most complicated make recipe in our Makefile.
+# We have to be careful to understand how make handles newlines and passes
+# these lines to the shell. For the most part, we need to end our recipe
+# lines with `;` and add a `\` at the very end.
+#
+# Also note that we have to escape `$` in our scripts with an extra `$`.
+#
+# We start by turning some make variables into shell variables. Most
+# importantly, we turn our list of urls and curl configuration files
+# into arrays so we can index them.  Since the curl configuration file
+# names were generated from the URLs when we assigned our make variables,
+# the index of a particular conf file will be the same as the corresponding
+# URL.
+#
+# Another important thing is that this recipe only generate one conf file
+# per run.  Otherwise, make won't properly clean up intermediate files.
+# To achieve this, we `break` out of the `for` loop when we've matched
+# the current target file (the one in the `$@` automatic make variable).
+#
+# We use some strange-looking bash variable expansions here, which are
+# documented at
+# https://www.gnu.org/software/bash/manual/bashref.html#Shell-Parameter-Expansion
 $(CURL_CONF_FILES): | $(SRC_DIR)
-	for url in $(URL_LIST); do \
-		zip_filename=$$(echo $$url | rev | cut -d / -f 1 | rev); \
-		url_filename="$(SRC_DIR)/$$zip_filename.conf"; \
-		echo "url=\"$$url\"" > $$url_filename; \
+	target_conf_file="$@"; \
+	url_list=($(URL_LIST)); \
+	curl_conf_files=($(CURL_CONF_FILES)); \
+	for i in "$${!curl_conf_files[@]}"; do \
+	  conf_file="$${curl_conf_files[$ii]}"; \
+	  if [ "$$conf_file" == "$$target_conf_file" ]; then \
+	    url="$${url_list[$$i]}"; \
+	    echo "url=\"$$url\"" > $$conf_file; \
+	    break; \
+	  fi \
 	done
 
 $(SRC_DIR):
