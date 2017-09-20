@@ -16,6 +16,31 @@ The project contains the following folders and important files:
 
 - `us-base-template` -- A template for maps within the U.S.
 
+## Installing the templates
+
+This project uses `make` to download base shapefiles, unzip them and copy the templates and source files to your QGIS template folder. From the main repo folder, run:
+
+		make && make install
+
+*Note: This assumes you are using the default location for QGIS templates of `~/.qgis2/project_templates`.* Your install of QGIS might house templates at a different location. You can check this path in QGIS by looking under `QGIS > Preferences > General > Project files > Template folder`. If your path differs from the default, you'll need to override the QGIS template folder variable.
+
+### Overriding the QGIS template folder location
+
+Copy the path from `QGIS > Preferences > General > Project files > Template folder`.
+
+To override the default location for QGIS templates, pass the new path as a variable to `make`. In the example below, the QGIS template directory is `~/src/my_templates`:
+
+		make && make install QGIS_TEMPLATE_DIR=~/src/my_templates
+		
+### Installing a single template
+
+You can similarly customize the list of templates you'd like to install by passing the variable 
+		
+
+### Using the templates
+
+Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.qgs`. Map, map away!
+
 
 ## Using the U.S. map template
 
@@ -26,27 +51,13 @@ This template focuses on the U.S., but the styles can be applied to other geogra
 The template folder includes a XXXXXXX file for setup, which will download the base shapefiles from [Natural Earth](http://www.naturalearthdata.com/downloads/) and locate them in a way QGIS can find them. The base shapefiles are:
 
 - `ne_10m_populated_places` -- Populated places (major cities), with scalerank
-- `ne_10m_lakes` -- Lakes
-- `ne_10m_rivers_lake_centerlines_scale_rank` -- Rivers with scalerank and tapering data
-- `ne_10m_roads` -- Major roads
-- `ne_10m_admin_1_states_provinces_lines` -- State boundaries
-- `ne_10m_admin_0_countries` - Countries
+- `ne_10m_lakes` -- Lakes (area polygons)
+- `ne_10m_rivers_lake_centerlines_scale_rank` -- Rivers (lines) with scalerank and tapering data
+- `ne_10m_roads` -- Major roads (lines)
+- `ne_10m_admin_1_states_provinces` -- State shapes
+- `ne_10m_admin_0_countries` - Country shapes
 
 The template itself is configured to look as close as possible to an NPR Viz map. It includes a basic color palette (which can be selected as `Project colors` in any color picker dropdown menu), styles and filters for the aforementioned layers, a default Albers projection and two print composers for exporting maps.
-
-### Installing the template
-
-1. Run XXXXX script to download base shapefiles from Natural earth.
-2. Copy the contents of the directory into your QGIS template folder:
-
-		cp -r us-base-template/* ~/.qgis2/project_templates
-
-	*Note: Your install of QGIS might house templates at a different location. You can check this in QGIS by looking under `QGIS > Preferences > General > Project files > Template folder` and using the path listed there.*
-
-
-### Using the template
-
-Open up QGIS and select `Project > New from template > us-base.qgs`. Map, map away!
 
 ## Making a new template
 
