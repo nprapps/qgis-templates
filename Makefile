@@ -13,8 +13,7 @@ install:
 		cd $$dir && cp -r *.qgs *-src $(QGIS_TEMPLATE_DIR); \
 	done
 
-
-clean: 
+clean:
 	for dir in $(TEMPLATES); do \
 		cd $$dir && $(MAKE) clean; \
 	done
