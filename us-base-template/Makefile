@@ -1,6 +1,9 @@
-# A list of URLs to be downloaded.  This will, hopefully, be the only thing that needs to
-# change between different templates
+# These two variables will be, hopefully, the only things that need to be changed between
+# different templates.
+# A list of URLs to be downloaded.
 URL_LIST = http://naciscdn.org/naturalearth/10m/cultural/ne_10m_populated_places_simple.zip http://naciscdn.org/naturalearth/10m/physical/ne_10m_lakes.zip http://naciscdn.org/naturalearth/10m/physical/ne_10m_rivers_lake_centerlines_scale_rank.zip http://naciscdn.org/naturalearth/10m/cultural/ne_10m_roads.zip http://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_1_states_provinces.zip http://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_0_countries.zip
+# The directory where shapefiles will be saved. Should be unique among other template source
+# folders.
 SRC_DIR = us-base-src
 
 # Macro to extract only the filename from a URL.  For example:
