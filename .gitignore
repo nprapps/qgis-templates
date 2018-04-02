@@ -1,2 +1,4 @@
 .DS_Store
+*.swp
 */*/ne_10m*
+*/*-src
