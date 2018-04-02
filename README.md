@@ -106,11 +106,12 @@ use.
 
 Save your template when you're finished. Then add it to the list of
 default templates to install within this repo's [main
-Makefile](./Makefile). You'll edit this variable at the top of the file:
+Makefile](./Makefile). You'll edit this variable at the top of the file
+and add your new template in a space-separated list:
 
         # Default variables that determine which templates to install and where to install them.
         # TEMPLATES is a space-separated list of template directories you wish to install.
-        TEMPLATES = us-base-template
+        TEMPLATES = us-base-template another-template
 
 Then, from the root folder of this repository, install your new template
 by running:
