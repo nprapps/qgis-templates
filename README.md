@@ -8,7 +8,8 @@ A home for NPR Viz-style QGIS map templates, which include style configurations 
 
 The following things are assumed to be true in this documentation.
 
-- You have QGIS 2.14.1 installed and working.
+- You have QGIS 2.14 installed and working.
+- You have `make` 3.x installed and working (this comes installed with the XCode Command Line Tools)
 
 ## What's in here?
 
@@ -28,13 +29,13 @@ This project uses `make` to download base shapefiles, unzip them and copy the te
 
 Copy the path from `QGIS > Preferences > General > Project files > Template folder`.
 
-To override the default location for QGIS templates, pass the new path as a variable to `make`. In the example below, the QGIS template directory is `~/src/my_templates`:
+To override the default location for QGIS templates, pass the new path as a variable to `make install`. In the example below, the QGIS template directory is `~/src/my_templates`:
 
 		make && make install QGIS_TEMPLATE_DIR=~/src/my_templates
 		
-### Installing a single template
+### Installing a specific template
 
-You can similarly customize the list of templates you'd like to install by passing the variable 
+You can similarly customize the list of templates you'd like to install by passing the variable `TEMPLATES` as an override. 
 		
 
 ### Using the templates
