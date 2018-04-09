@@ -3,7 +3,7 @@
   <title></title>
   <layer-tree-group expanded="1" checked="Qt::Checked" name="">
     <customproperties/>
-    <layer-tree-layer expanded="0" checked="Qt::Checked" id="ne_10m_populated_places20170830132204981" name="ne_10m_populated_places">
+    <layer-tree-layer expanded="0" checked="Qt::Checked" id="ne_10m_populated_places_simple20170830132204981" name="ne_10m_populated_places_simple">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer expanded="1" checked="Qt::Checked" id="ne_10m_lakes20170905173923415" name="ne_10m_lakes">
@@ -47,7 +47,7 @@
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
     <layer_coordinate_transform_info>
-      <layer_coordinate_transform destAuthId="EPSG:102003" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_populated_places20170830132204981"/>
+      <layer_coordinate_transform destAuthId="EPSG:102003" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_populated_places_simple20170830132204981"/>
       <layer_coordinate_transform destAuthId="EPSG:102003" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_rivers_lake_centerlines_scale_rank20170905174025418"/>
       <layer_coordinate_transform destAuthId="EPSG:102003" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10m_admin_0_countries20170905174851167"/>
       <layer_coordinate_transform destAuthId="EPSG:102003" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="ne_10_usa_clipped20170828133521806"/>
@@ -61,7 +61,7 @@
   </mapcanvas>
   <layer-tree-canvas>
     <custom-order enabled="0">
-      <item>ne_10m_populated_places20170830132204981</item>
+      <item>ne_10m_populated_places_simple20170830132204981</item>
       <item>ne_10m_lakes20170905173923415</item>
       <item>ne_10m_rivers_lake_centerlines_scale_rank20170905174025418</item>
       <item>ne_10m_admin_0_countries20170905174851167</item>
@@ -70,9 +70,9 @@
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
-    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="ne_10m_populated_places" showFeatureCount="0">
+    <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="ne_10m_populated_places_simple" showFeatureCount="0">
       <filegroup open="false" hidden="false">
-        <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places20170830132204981" visible="1"/>
+        <legendlayerfile isInOverview="0" layerid="ne_10m_populated_places_simple20170830132204981" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ne_10m_lakes" showFeatureCount="0">
@@ -1525,15 +1525,15 @@ def my_form_open(dialog, layer, feature):
       </conditionalstyles>
     </maplayer>
     <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Point" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>ne_10m_populated_places20170830132204981</id>
-      <datasource>./us-base-src/ne_10m_populated_places/ne_10m_populated_places.shp|layerid=0|subset="SOV0NAME" = 'United States'  AND "FEATURECLA" = 'Admin-1 capital' OR "SOV0NAME" = 'United States'  AND "SCALERANK" &lt;= 8  </datasource>
-      <shortname>ne_10m_populated_places</shortname>
+      <id>ne_10m_populated_places_simple20170830132204981</id>
+      <datasource>./us-base-src/ne_10m_populated_places_simple/ne_10m_populated_places_simple.shp|layerid=0|subset="SOV0NAME" = 'United States'  AND "FEATURECLA" = 'Admin-1 capital' OR "SOV0NAME" = 'United States'  AND "SCALERANK" &lt;= 8  </datasource>
+      <shortname>ne_10m_populated_places_simple</shortname>
       <title></title>
       <abstract></abstract>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ne_10m_populated_places</layername>
+      <layername>ne_10m_populated_places_simple</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -2823,7 +2823,7 @@ def my_form_open(dialog, layer, feature):
         <value>ne_10m_admin_0_countries20170905174851167</value>
         <value>ne_10m_admin_1_states_provinces20170920172251760</value>
         <value>ne_10m_lakes20170905173923415</value>
-        <value>ne_10m_populated_places20170830132204981</value>
+        <value>ne_10m_populated_places_simple20170830132204981</value>
         <value>ne_10m_rivers_lake_centerlines_scale_rank20170905174025418</value>
         <value>ne_10m_roads20170905180152810</value>
       </LayerSnappingList>
