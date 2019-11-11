@@ -1,6 +1,6 @@
 # Default variables that determine which templates to install and where to install them.
 # TEMPLATES is a space-separated list of template directories you wish to install.
-TEMPLATES = us-base-template
+TEMPLATES = us-base-template temperature-map-template
 
 # This is the path to the location where you store QGIS templates.
 # QGIS defaults to ~/.qgis3/project_templates.
@@ -20,7 +20,7 @@ all:
 # to the template directory specified above.
 install:
 	for dir in $(TEMPLATES); do \
-		cd $$dir && cp -r *.qgs *-src $(QGIS_TEMPLATE_DIR); \
+		cd $$dir && cp -r *.qgz *-src $(QGIS_TEMPLATE_DIR); \
 		cd ..; \
 	done
 
