@@ -48,8 +48,7 @@ You'll need to pass the variable twice since it's used by both commands:
 
 ## Using the installed templates
 
-Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.qgs`. Map, map away!
-
+Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.qgz`. Map, map away!
 
 ## About the U.S. map template
 
