@@ -8,7 +8,7 @@ A home for NPR Viz-style QGIS map templates, which include style configurations 
 
 The following things are assumed to be true in this documentation.
 
-- You have QGIS >=2.14 installed and working.
+- You have QGIS >=3.8 installed and working.
 - You have `make` 3.x installed and working (this comes installed with the XCode Command Line Tools)
 
 ## What's in here?
@@ -18,12 +18,18 @@ The project contains the following folders and important files:
 - `us-base-template` -- A template for maps within the U.S.
 
 ## Installing the templates
+**Create a folder for QGIS templates.** In your root directory:
 
-This project uses `make` to download base shapefiles, unzip them and copy the templates and source files to your QGIS template folder. From the main repo folder, run:
+		mkdir .qgis3
+		mkdir .qgis3/project_templates
+
+** Set default location for QGIS templates.** Go to `QGIS > Preferences > General > Project files > Template folder`. Click the folder button next to "Template folder". Use `Command-Shift-.` to show hidden folders/files. Select `.qgis3/project_templates`
+
+**Install** This project uses `make` to download base shapefiles, unzip them and copy the templates and source files to your QGIS template folder. From the main repo folder, run:
 
 		make && make install
 
-*Note: This assumes you are using the default location for QGIS templates of `~/.qgis2/project_templates`.* Your install of QGIS might house templates at a different location. You can check this path in QGIS by looking under `QGIS > Preferences > General > Project files > Template folder`. If your path differs from the default, you'll need to override the QGIS template folder variable.
+
 
 ### Overriding the QGIS template folder location
 

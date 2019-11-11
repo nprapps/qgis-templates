@@ -3,8 +3,9 @@
 TEMPLATES = us-base-template
 
 # This is the path to the location where you store QGIS templates.
-# QGIS defaults to ~/.qgis2/project_templates.
-QGIS_TEMPLATE_DIR = ~/.qgis2/project_templates
+# QGIS defaults to ~/.qgis3/project_templates.
+# QGIS_TEMPLATE_DIR = ~/.qgis2/project_templates
+QGIS_TEMPLATE_DIR = ~/.qgis3/project_templates
 
 .PHONY: all clean
 
