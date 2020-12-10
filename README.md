@@ -53,7 +53,7 @@ Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.q
 ## About the specific templates
 
 - `locator-template` -- This template contains styles used in recent locator maps, but the styles can be applied to other maps.
-- `temperature-map-template` -- This template contains styles for a temperature map. 
+- `temperature-map-template` -- This template contains styles for a map of the U.S. with temperature rasters. 
 - `us-base-template` -- This template focuses on the U.S., but the styles can be applied to other geographies.
 
 ## What's in each template?
