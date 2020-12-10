@@ -50,15 +50,13 @@ You'll need to pass the variable twice since it's used by both commands:
 
 Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.qgz`. Map, map away!
 
-## About the locator map template
+## About the specific templates
 
-This template contains styles used in recent locator maps, but the styles can be applied to other maps.
+- `locator-template` -- This template contains styles used in recent locator maps, but the styles can be applied to other maps.
+- `temperature-map-template` -- This template contains styles for a temperature map. 
+- `us-base-template` -- This template focuses on the U.S., but the styles can be applied to other geographies.
 
-## About the U.S. map template
-
-This template focuses on the U.S., but the styles can be applied to other geographies.
-
-### What's in each template?
+## What's in each template?
 
 The template folder includes a Makefile for setup, which will download the base shapefiles from [Natural Earth](http://www.naturalearthdata.com/downloads/) and locate them in a way QGIS can find them. The base shapefiles are:
 
