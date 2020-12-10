@@ -50,11 +50,15 @@ You'll need to pass the variable twice since it's used by both commands:
 
 Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.qgz`. Map, map away!
 
+## About the locator map template
+
+This template contains styles used in recent locator maps, but the styles can be applied to other maps.
+
 ## About the U.S. map template
 
 This template focuses on the U.S., but the styles can be applied to other geographies.
 
-### What's in this template?
+### What's in each template?
 
 The template folder includes a Makefile for setup, which will download the base shapefiles from [Natural Earth](http://www.naturalearthdata.com/downloads/) and locate them in a way QGIS can find them. The base shapefiles are:
 
@@ -64,6 +68,7 @@ The template folder includes a Makefile for setup, which will download the base 
 - `ne_10m_roads` -- Major roads (lines)
 - `ne_10m_admin_1_states_provinces` -- State shapes
 - `ne_10m_admin_0_countries` - Country shapes
+- `ne_10m_admin_0_countries_lakes` - Country shapes with lake boundaries (only included in locator template)
 
 The template itself is configured to look as close as possible to an NPR Viz map. It includes a basic color palette (which can be selected as `Project colors` in any color picker dropdown menu), styles and filters for the aforementioned layers, a default Albers projection and two print composers for exporting maps.
 
