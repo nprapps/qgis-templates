@@ -11,12 +11,6 @@ The following things are assumed to be true in this documentation.
 - You have QGIS >=3.8 installed and working.
 - You have `make` 3.x installed and working (this comes installed with the XCode Command Line Tools)
 
-## What's in here?
-
-The project contains the following folders and important files:
-
-- `us-base-template` -- A template for maps within the U.S.
-
 ## Installing the templates
 **Create a folder for QGIS templates.** In your root directory:
 
@@ -53,7 +47,7 @@ Open up QGIS and select `Project > New from template > YOUR_TEMPLATE_OF_CHOICE.q
 ## About the specific templates
 
 - `locator-template` -- This template contains styles used in recent locator maps, but the styles can be applied to other maps.
-- `temperature-map-template` -- This template contains styles for a map of the U.S. with temperature rasters. 
+- `temperature-map-template` -- This template contains styles for a map of the U.S. with temperature rasters.
 - `us-base-template` -- This template focuses on the U.S., but the styles can be applied to other geographies.
 
 ## What's in each template?
